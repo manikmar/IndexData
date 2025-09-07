@@ -9,3 +9,5 @@ Do you work daily
 sun is going to set
 moon is white
 apple is red
+roses are red
+sky is blue
