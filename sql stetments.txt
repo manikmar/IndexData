@@ -1,0 +1,71 @@
+create database devdb;
+use devdb;
+
+create table dev_de(
+id int primary key not null,
+name varchar (20) not null,
+gender char(1),
+email varchar (30),
+phone varchar(50),
+address varchar(30),
+role varchar (20),
+experience int 
+);
+
+
+insert into dev_de values(101,"b pranay","M","pranayb506@gmail.com",9381276278,"ongole","developer",1),
+(102,"b sunny","M","sunny878@gmail.com",8779876790,"piduguralla","developer",1),
+(103,"bunny","M","bunny@gmail.com",9098670987,"piduguralla","developer",1);
+
+drop table dev_de;
+
+desc dev_de;
+
+insert into dev_de values(104,"b honey","M","honey@gmail.com",9098670987,"ongole","developer",2),
+(105,"b varun","M","varun@gmail.com",9098670987,"vijayawada","developer",1),
+(106,"s deva ","M","deva@gmail.com",9098670987,"khansaar","developer",3),
+(107,"khatyayani","F","karthu@gmail.com",9098670987,"hyderabadh","developer",4),
+(108,"p evaan","M","evaan@gmail.com",9098670987,"hyderabad","developer",4),
+(109,"p etan ","M","etan@gmail.com",9098670987,"vizag","developer",5),
+(110,"a akhil","M","akhil@gmail.com",9098670987,"hyderabadh","developer",4),
+(111,"ojes gambheera","M","ojes@gmail.com",9098670987,"bombay","developer",6);
+
+select* from dev_de;
+
+alter table dev_de add salary int(50);
+alter table dev_de drop salary;
+alter table dev_de add salary int;
+alter table dev_de modify salary float;
+
+update dev_de set salary=50000 where id=101;
+update dev_de set salary=55000 where id=102;
+update dev_de set salary=60000 where id=103;
+update dev_de set salary=65000 where id=104;
+update dev_de set salary=70000 where id=105;
+update dev_de set salary=75000 where id=106;
+update dev_de set salary=80000 where id=107;
+update dev_de set salary=85000 where id=108;
+update dev_de set salary=90000 where id=109;
+update dev_de set salary=95000 where id=110;
+update dev_de set salary=100000 where id=111;
+
+select distinct salary from dev_de order by salary desc;
+
+select id,name from dev_de where experience < 2;
+
+select id,name,salary from dev_de where salary>=65000 and salary<=90000;
+
+select name from dev_de where experience in (1,2,3);
+
+select* from dev_de where salary between 70000 and 80000;
+
+select* from dev_de where experience like 1;
+
+select experience,count(id) from dev_de where experience=1;  
+
+select* from dev_de;
+
+truncate table dev_de;
+
+drop table dev_de;
+drop database devdb;
